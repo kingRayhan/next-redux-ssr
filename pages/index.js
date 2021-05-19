@@ -2,21 +2,20 @@
 // import { wrapper } from "../store";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 
 const StyledDemo = styled.div`
-  ${tw`flex items-center justify-center h-screen bg-green-100`}
+  ${tw`flex items-center justify-center h-screen`}
 `;
 
-const Title = styled.h1`
+const Title = css`
   ${tw`text-5xl font-light uppercase`}
 `;
 
 export default function Home() {
-  // const products = useSelector((state) => state.products.index);
-
   return (
     <StyledDemo>
-      <Title>nextjs</Title>
+      <h2 className={Title}>nextjs</h2>
     </StyledDemo>
   );
 }
