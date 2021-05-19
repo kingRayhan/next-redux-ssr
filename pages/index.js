@@ -1,32 +1,28 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loadProducts } from "../store/products";
-import { initializeStore, wrapper } from "../store";
+// import { loadProducts } from "../store/products";
+// import { wrapper } from "../store";
 import tw from "twin.macro";
+import styled from "@emotion/styled";
+
+const StyledDemo = styled.div`
+  ${tw`flex items-center justify-center h-screen bg-green-100`}
+`;
+
+const Title = styled.h1`
+  ${tw`text-5xl font-light uppercase`}
+`;
 
 export default function Home() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(loadProducts());
-  // }, []);
-
-  const products = useSelector((state) => state.products.index);
+  // const products = useSelector((state) => state.products.index);
 
   return (
-    <div>
-      <h1 tw="font-bold">products</h1>
-      <h2 tw="font-bold">products</h2>
-
-      <pre>{JSON.stringify(products, undefined, 4)}</pre>
-    </div>
+    <StyledDemo>
+      <Title>nextjs</Title>
+    </StyledDemo>
   );
 }
 
-// The date returned here will be different for every request that hits the page,
-// that is because the page becomes a serverless function instead of being statically
-// exported when you use `getServerSideProps` or `getInitialProps`
-export const getServerSideProps = wrapper.getServerSideProps(
-  (store) => async () => {
-    await store.dispatch(loadProducts());
-  }
-);
+// export const getServerSideProps = wrapper.getServerSideProps(
+//   (store) => async () => {
+//     await store.dispatch(loadProducts());
+//   }
+// );
