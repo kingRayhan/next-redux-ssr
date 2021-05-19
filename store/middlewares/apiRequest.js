@@ -1,7 +1,7 @@
 import axios from "axios";
 import { apiFailed, apiRequest, apiSuccess } from "../api";
 
-export default (store) => (next) => async (action) => {
+const ApiRequest = (store) => (next) => async (action) => {
   if (action.type !== apiRequest.type) return next(action);
 
   const { url, method, data, headers, dispatchOnSuccess, dispatchOnError } =
@@ -29,3 +29,5 @@ export default (store) => (next) => async (action) => {
     }
   }
 };
+
+export default ApiRequest;
