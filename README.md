@@ -4,4 +4,4 @@
 - Redux
 - tailwindcss JIT
 - twin.macro
-- Styled Components
+- emotionjs 
